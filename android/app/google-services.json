@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "761115126999",
+    "project_id": "diamante-363d8",
+    "storage_bucket": "diamante-363d8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:761115126999:android:7bffc8e9db6248fc915492",
+        "android_client_info": {
+          "package_name": "com.diamanteblockchain.diamanteblockchain"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCg5-5auf9E04Hy8-cdNEMndkT6wCR3IXM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
