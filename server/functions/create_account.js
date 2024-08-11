@@ -98,7 +98,7 @@ async function mintAndTransferAsset(pair, publicKey, assetCode, supply) {
 
 accRouter.post('/mint', async (req, res) =>{
   const {assetName, amount, parentPublicKey, childPublicKey} = req.body;
-  await assetMinter(res, assetName, amount, childPublicKey, parentPublicKey);
+  await assetMinter(res, assetName, amount, parentPublicKey, childPublicKey);
 });
 
 // assetMinter(res, "", "", "");
@@ -120,7 +120,7 @@ async function assetMinter(res, astName, amo, rec, dis) {
 
       const account = await server.loadAccount(distributor); //distributor); //"GA3SXDTF26ERV3ZVPH3NG7AGWX772JZCNEOFFZR2EFEH57LI3XZO7OUF");
       const _asset = new Asset(
-          assetName,
+          "GMM",
           distributor //distributor //"GA3SXDTF26ERV3ZVPH3NG7AGWX772JZCNEOFFZR2EFEH57LI3XZO7OUF"//CHILD ACCOUNT
       );
 
@@ -132,20 +132,9 @@ async function assetMinter(res, astName, amo, rec, dis) {
               Operation.payment({
                   destination: recevier,//recevier, //"GCNLWIT4BKHN4Y4KSNLEOCTRC7YKWSHULAYGQN3FN4GCZSYSKE4G7FTC", //parent account
                   asset: _asset,
-                  amount: _amount,
+                  amount: "10",
               })
           )
-          // .addOperation(
-          //   Operation.manageData({
-          //       name: assetName,
-          //       value: `governing asset`,
-          //   })
-          // )
-          //   .addOperation(
-          //     Operation.setOptions({
-          //       masterWeight: 0,
-          //     })
-            // )
             .setTimeout(100)
           .build();
           console.log(`TRANS ID: ${transaction.toEnvelope().toXDR('base64')}`);
