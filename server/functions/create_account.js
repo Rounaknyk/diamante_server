@@ -271,7 +271,7 @@ async function getTrx(res, key){
     .addOperation(
       DiamSdk.Operation.createAccount({
         destination: pair.publicKey(),
-        startingBalance: "50",
+        startingBalance: "1000",
       })
     )
     .setTimeout(180)
