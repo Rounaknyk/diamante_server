@@ -408,6 +408,7 @@ async function createParentAcc(res, publicKey){
 accRouter.post('/create-parent-account', async (req, res) => {
   try{
     const {key} = req.body;
+    console.log(key);
     await createParentAcc(res, key);
   }catch(e){
     console.log(e);
