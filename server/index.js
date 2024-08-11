@@ -18,7 +18,7 @@ app.use(paymentRouter);
 app.use(dataRouter);
 app.use(assetMinter);
 app.use(testRouter);
-app.use(cors({ origin: 'https://diamante-363d8.web.app' }));
+app.use(cors({ origin: 'https://diamflow.vercel.app' }));
 
 
 // create a completely new and unique pair of keys
