@@ -51,7 +51,9 @@ class _ConnectScreenState extends State<ConnectScreen> {
           print("BHEN");
           print(pKey);
           LocalData().saveToLocalStorage('parentPublicKey', pKey);
+          await CreateAccount(context).createParentAcc(pKey);
 
+          Navigator.push(context, MaterialPageRoute(builder: (context) => HomeScreen(pKey: pKey, role: widget.role,)));
           // if(pKey != null && pKey.isNotEmpty){
             // String uid = FirebaseAuth.instance.currentUser!.uid;
             // await CreateAccount(context).createParentAcc(pKey);
@@ -61,9 +63,7 @@ class _ConnectScreenState extends State<ConnectScreen> {
             // }, SetOptions(merge: true));
             // LocalData().saveToLocalStorage('primaryKey', pKey);
             // LocalData().saveToLocalStorage('uid', uid);
-            await CreateAccount(context).createParentAcc(pKey);
 
-            Navigator.push(context, MaterialPageRoute(builder: (context) => HomeScreen(pKey: pKey, role: widget.role,)));
           // }
         } else {
           Navigator.push(context, MaterialPageRoute(builder: (context) => HomeScreen(pKey: pKey, role: widget.role)));

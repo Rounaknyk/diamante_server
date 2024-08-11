@@ -785,12 +785,13 @@ class _HomeTabState extends State<HomeTab> {
     setState(() {
       screenLoading = true;
     });
-    var parentSecretKey = await LocalData().loadStoredValue('secretKey');
-    print("THIS IS PARENT KEY $parentSecretKey");
+    // var parentSecretKey = await LocalData().loadStoredValue('secretKey');
+    // print("THIS IS PARENT KEY $parentSecretKey");
 
     try {
       childSecretKey = await LocalData().loadStoredValue('childSecretKey');
       childPublicKey = await LocalData().loadStoredValue('childPublicKey');
+      print("PARENNTTT ${LocalData().loadStoredValue('parentPublicKey')}");
       print("THIS IS CHILD S KEY $childSecretKey");
       print("THIS IS CHILD P KEY $childPublicKey");
 

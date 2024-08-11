@@ -382,7 +382,7 @@ accRouter.post('/trx', async (req, res) => {
   console.log("eajs2")
   const {key} = req.body;
   console.log(`TRX KEY ${key}`);
-  await getTrx(res, key);
+  await getTrx(res, "GDNHJZG7HFLOD3DJCYYIK3JGV4GJQOHQXBDME5L77TRHJUJ6S4DZSHLU");
 });
 
 // createAccount("SBEQSONKMFK6ZNPL64TMRC3666REZUZLO7SSD3AYOK2FRK5LTF4JJTX7");
