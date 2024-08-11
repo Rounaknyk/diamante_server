@@ -49498,7 +49498,7 @@ var $async$A2=A.I(function(d,e){if(d===1){o=e
 s=p}while(true)switch(s){case 0:p=4
 l=t.N
 s=7
-return A.N(A.Km(A.eo("http://64.71.146.212:3000/create-trust"),B.a0.oE(A.aD(["parentPublicKey",b,"childPublicKey",c,"assetName",a],l,t.z),null),A.aD(["Content-Type","application/json"],l,l)),$async$A2)
+return A.N(A.Km(A.eo("https://diamante-server.onrender.com/create-trust"),B.a0.oE(A.aD(["parentPublicKey",b,"childPublicKey",c,"assetName",a],l,t.z),null),A.aD(["Content-Type","application/json"],l,l)),$async$A2)
 case 7:n=e
 l=n
 A.az("TRUST "+A.f(J.am(B.a0.hv(0,A.hb(A.ha(l.e).c.a.h(0,"charset")).cj(0,l.w),null),"text")))
@@ -49531,7 +49531,7 @@ var $async$Bm=A.I(function(e,f){if(e===1){o=f
 s=p}while(true)switch(s){case 0:p=4
 l=t.N
 s=7
-return A.N(A.Km(A.eo("http://64.71.146.212:3000/mint"),B.a0.oE(A.aD(["assetName",a,"amount",b,"parentPublicKey",c,"childPublicKey",d],l,t.z),null),A.aD(["Content-Type","application/json"],l,l)),$async$Bm)
+return A.N(A.Km(A.eo("https://diamante-server.onrender.com/mint"),B.a0.oE(A.aD(["assetName",a,"amount",b,"parentPublicKey",c,"childPublicKey",d],l,t.z),null),A.aD(["Content-Type","application/json"],l,l)),$async$Bm)
 case 7:n=f
 l=n
 A.az("BHAI "+A.f(J.am(B.a0.hv(0,A.hb(A.ha(l.e).c.a.h(0,"charset")).cj(0,l.w),null),"text")))
@@ -49563,7 +49563,7 @@ var $async$A_=A.I(function(b,c){if(b===1){o=c
 s=p}while(true)switch(s){case 0:p=4
 l=t.N
 s=7
-return A.N(A.Km(A.eo("http://64.71.146.212:3000/create-parent-account"),B.a0.oE(A.aD(["key",a],l,t.z),null),A.aD(["Content-Type","application/json"],l,l)),$async$A_)
+return A.N(A.Km(A.eo("https://diamante-server.onrender.com/create-parent-account"),B.a0.oE(A.aD(["key",a],l,t.z),null),A.aD(["Content-Type","application/json"],l,l)),$async$A_)
 case 7:n=c
 l=n
 A.az(B.a0.hv(0,A.hb(A.ha(l.e).c.a.h(0,"charset")).cj(0,l.w),null))
@@ -49600,7 +49600,7 @@ s=p}while(true)switch(s){case 0:p=4
 A.az("reached")
 l=t.N
 s=7
-return A.N(A.Km(A.eo("http://64.71.146.212:3000/trx"),B.a0.oE(A.aD(["key",a],l,l),null),A.aD(["Content-Type","application/json"],l,l)),$async$wO)
+return A.N(A.Km(A.eo("https://diamante-server.onrender.com/trx"),B.a0.oE(A.aD(["key",a],l,l),null),A.aD(["Content-Type","application/json"],l,l)),$async$wO)
 case 7:n=c
 l=n
 A.az(B.a0.hv(0,A.hb(A.ha(l.e).c.a.h(0,"charset")).cj(0,l.w),null))
@@ -49633,7 +49633,7 @@ var $async$x0=A.I(function(e,f){if(e===1){o=f
 s=p}while(true)switch(s){case 0:p=4
 l=t.N
 s=7
-return A.N(A.Km(A.eo("http://64.71.146.212:3000/send-payment-to-worker"),B.a0.oE(A.aD(["parentPublicKey",a,"amount",b,"workerPublicKey",c,"assetName",d],l,t.z),null),A.aD(["Content-Type","application/json"],l,l)),$async$x0)
+return A.N(A.Km(A.eo("https://diamante-server.onrender.com/send-payment-to-worker"),B.a0.oE(A.aD(["parentPublicKey",a,"amount",b,"workerPublicKey",c,"assetName",d],l,t.z),null),A.aD(["Content-Type","application/json"],l,l)),$async$x0)
 case 7:n=f
 l=n
 A.az("PAYMENT RESPONSE : "+A.f(J.am(B.a0.hv(0,A.hb(A.ha(l.e).c.a.h(0,"charset")).cj(0,l.w),null),"text")))
@@ -49666,7 +49666,7 @@ var $async$x_=A.I(function(e,f){if(e===1){o=f
 s=p}while(true)switch(s){case 0:p=4
 l=t.N
 s=7
-return A.N(A.Km(A.eo("http://64.71.146.212:3000/send-payment-to-contractor"),B.a0.oE(A.aD(["parentPublicKey",a,"amount",b,"contractorPublicKey",c,"assetName",d],l,t.z),null),A.aD(["Content-Type","application/json"],l,l)),$async$x_)
+return A.N(A.Km(A.eo("https://diamante-server.onrender.com/send-payment-to-contractor"),B.a0.oE(A.aD(["parentPublicKey",a,"amount",b,"contractorPublicKey",c,"assetName",d],l,t.z),null),A.aD(["Content-Type","application/json"],l,l)),$async$x_)
 case 7:n=f
 l=n
 A.az("PAYMENT RESPONSE : "+A.f(J.am(B.a0.hv(0,A.hb(A.ha(l.e).c.a.h(0,"charset")).cj(0,l.w),null),"text")))
