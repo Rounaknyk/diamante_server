@@ -178,3 +178,5 @@ dist
 .pnp.*
 **/node_modules
 build/e5f1d823da701e3b3cc71bf0ad4e26b9.cache.dill.track.dill
+build/*.dill
+build/*.dill.track.dill
