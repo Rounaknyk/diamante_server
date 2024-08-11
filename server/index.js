@@ -18,15 +18,12 @@ app.use(cors({
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
     allowedHeaders: ['Content-Type', 'Authorization']
   }));
-app.use(cors);
 app.use(express.json());
 app.use(accRouter);
 app.use(paymentRouter);
 app.use(dataRouter);
 app.use(assetMinter);
 app.use(testRouter);
-
-
 
 // create a completely new and unique pair of keys
 
