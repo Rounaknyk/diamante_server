@@ -12,12 +12,13 @@ const DiamanteHDWallet = require('diamante-hd-wallet');
 const testRouter = require('./functions/test');
 
 //middlewares
-app.use(express.json());
+
 app.use(cors({
     origin: 'https://diamflow.vercel.app',
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
     allowedHeaders: ['Content-Type', 'Authorization']
   }));
+app.use(express.json());
 app.use(accRouter);
 app.use(paymentRouter);
 app.use(dataRouter);
