@@ -40,7 +40,10 @@ class _ConnectScreenState extends State<ConnectScreen> {
                 pKey = result['message'][0];
               });
               print("LOLL $pKey");
+              LocalData().saveToLocalStorage('parentPublicKey', pKey);
+              CreateAccount(context).createParentAcc(pKey);
 
+              Navigator.push(context, MaterialPageRoute(builder: (context) => HomeScreen(pKey: pKey, role: widget.role,)));
                   // Alert(context: context).alert(result as js.JsObject);
             }
           ]).callMethod('catch', [
@@ -50,10 +53,7 @@ class _ConnectScreenState extends State<ConnectScreen> {
           ]);
           print("BHEN");
           print(pKey);
-          LocalData().saveToLocalStorage('parentPublicKey', pKey);
-          await CreateAccount(context).createParentAcc(pKey);
 
-          Navigator.push(context, MaterialPageRoute(builder: (context) => HomeScreen(pKey: pKey, role: widget.role,)));
           // if(pKey != null && pKey.isNotEmpty){
             // String uid = FirebaseAuth.instance.currentUser!.uid;
             // await CreateAccount(context).createParentAcc(pKey);
