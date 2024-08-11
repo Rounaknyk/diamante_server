@@ -57,8 +57,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
       setState(() {
         loading = false;
       });
+      Navigator.push(context, MaterialPageRoute(builder: (context) => ConnectScreen(role: role, name: name)));
       print(e);
-      Alert(context: context).alert(e);
+      // Alert(context: context).alert(e);
     }
   }
 

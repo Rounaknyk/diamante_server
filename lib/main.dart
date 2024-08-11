@@ -50,7 +50,7 @@ class _MyAppState extends State<MyApp> {
 
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
+      title: 'Diam Flow',
       theme: ThemeData(
         fontFamily: 'Baloo',
         floatingActionButtonTheme: FloatingActionButtonThemeData(backgroundColor: kPrimaryColor)
