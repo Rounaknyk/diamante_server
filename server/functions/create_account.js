@@ -245,7 +245,10 @@ async function setupRecevier(recevier, distributor, asset_name) {
 
 async function getTrx(res, key){
   console.log("HEOA");
+
   const parentKey = Buffer.from(key, 'utf8').toString();
+  console.log(`TRX KEY 2 ${parentKey}`);
+
   try{
     const pair = DiamSdk.Keypair.random();
     console.log(pair);
@@ -378,7 +381,7 @@ accRouter.post('/create-trust', async (req, res) => {
 accRouter.post('/trx', async (req, res) => {
   console.log("eajs2")
   const {key} = req.body;
-  console.log(key);
+  console.log(`TRX KEY ${key}`);
   await getTrx(res, key);
 });
 

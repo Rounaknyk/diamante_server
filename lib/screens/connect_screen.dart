@@ -40,7 +40,6 @@ class _ConnectScreenState extends State<ConnectScreen> {
                 pKey = result['message'][0];
               });
               print("LOLL $pKey");
-              Navigator.push(context, MaterialPageRoute(builder: (context) => HomeScreen(pKey: pKey, role: widget.role,)));
 
                   // Alert(context: context).alert(result as js.JsObject);
             }
@@ -64,6 +63,7 @@ class _ConnectScreenState extends State<ConnectScreen> {
             // LocalData().saveToLocalStorage('uid', uid);
             await CreateAccount(context).createParentAcc(pKey);
 
+            Navigator.push(context, MaterialPageRoute(builder: (context) => HomeScreen(pKey: pKey, role: widget.role,)));
           // }
         } else {
           Navigator.push(context, MaterialPageRoute(builder: (context) => HomeScreen(pKey: pKey, role: widget.role)));
