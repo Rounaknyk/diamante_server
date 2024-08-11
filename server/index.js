@@ -13,12 +13,17 @@ const testRouter = require('./functions/test');
 
 //middlewares
 app.use(express.json());
+app.use(cors({
+    origin: 'https://diamflow.vercel.app',
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization']
+  }));
 app.use(accRouter);
 app.use(paymentRouter);
 app.use(dataRouter);
 app.use(assetMinter);
 app.use(testRouter);
-app.use(cors({ origin: 'https://diamflow.vercel.app' }));
+
 
 
 // create a completely new and unique pair of keys
