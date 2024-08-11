@@ -19,6 +19,9 @@ app.use(paymentRouter);
 app.use(dataRouter);
 app.use(assetMinter);
 app.use(testRouter);
+app.use(cors({ origin: 'https://diamflow-o4ufteosb-raunaks-projects-7cdf515c.vercel.app' }));
+
+
 // create a completely new and unique pair of keys
 
 // Generate a new mnemonic phrase
