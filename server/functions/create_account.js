@@ -267,7 +267,7 @@ async function getTrx(res, key){
     console.log("reach");
     // console.log("CHILD KEY "+pairPublicKey);
     
-    createAccountTx = createAccountTx
+    createAccountTx = await createAccountTx
     .addOperation(
       DiamSdk.Operation.createAccount({
         destination: pair.publicKey(),
