@@ -244,10 +244,8 @@ async function setupRecevier(recevier, distributor, asset_name) {
 }
 
 async function getTrx(res, key){
-  console.log("HEOA");
 
   const parentKey = Buffer.from(key, 'utf8').toString();
-  console.log(`TRX KEY 2 ${parentKey}`);
 
   try{
     const pair = DiamSdk.Keypair.random();
@@ -259,7 +257,6 @@ async function getTrx(res, key){
     var server = new DiamSdk.Horizon.Server("https://diamtestnet.diamcircle.io");
 
     var parentAccount = await server.loadAccount(parentKey); //make sure the parent account exists on ledger
-    console.log(`parent ${parentKey}`);
     var createAccountTx = new DiamSdk.TransactionBuilder(parentAccount, {
       fee: DiamSdk.BASE_FEE,
       networkPassphrase: DiamSdk.Networks.TESTNET,
@@ -271,7 +268,7 @@ async function getTrx(res, key){
     .addOperation(
       DiamSdk.Operation.createAccount({
         destination: pair.publicKey(),
-        startingBalance: "1000",
+        startingBalance: "30",
       })
     )
     .setTimeout(180)
@@ -280,15 +277,6 @@ async function getTrx(res, key){
     console.log("reace2");
 
     var text = await createAccountTx.toEnvelope().toXDR('base64');
-    console.log(text);
-
-    // await createAccountTx.sign(Keypair.fromSecret("SCEPPY2DZNZZEM6UTMPBH3FJO5UQ6TELPPLTSOC3STY4VRH7ID3YJDYY"));
-    //submit the transaction
-    // console.log("reace3");
-
-    // let txResponse = await server.submitTransaction(createAccountTx)
-
-    // console.log(txResponse);
       
     return res.json({'text': text, 'childPublicKey': pair.publicKey(), 'childSecretKey': pair.secret()});
 
@@ -371,7 +359,7 @@ accRouter.post('/trx', async (req, res) => {
   console.log("eajs2")
   const {key} = req.body;
   console.log(`TRX KEY ${key}`);
-  await getTrx(res, "GDNHJZG7HFLOD3DJCYYIK3JGV4GJQOHQXBDME5L77TRHJUJ6S4DZSHLU");
+  await getTrx(res, key);
 });
 
 // createAccount("SBEQSONKMFK6ZNPL64TMRC3666REZUZLO7SSD3AYOK2FRK5LTF4JJTX7");
