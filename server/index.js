@@ -12,7 +12,6 @@ const DiamanteHDWallet = require('diamante-hd-wallet');
 const testRouter = require('./functions/test');
 
 //middlewares
-app.use(cors());
 app.use(express.json());
 app.use(accRouter);
 app.use(paymentRouter);
