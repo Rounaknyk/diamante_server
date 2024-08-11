@@ -98,16 +98,16 @@ async function mintAndTransferAsset(pair, publicKey, assetCode, supply) {
 
 accRouter.post('/mint', async (req, res) =>{
   const {assetName, amount, parentPublicKey, childPublicKey} = req.body;
-  await assetMinter(res, assetName, amount, parentPublicKey, childPublicKey);
+  await assetMinter(res, assetName, amount, childPublicKey, parentPublicKey);
 });
 
 // assetMinter(res, "", "", "");
 async function assetMinter(res, astName, amo, rec, dis) {
   // console.log("Asda");
-  assetName = Buffer.from(astName, 'utf8').toString();
-  _amount = Buffer.from(amo, 'utf8').toString();
-  distributor = Buffer.from(dis, 'utf8').toString();
-  recevier = Buffer.from(rec, 'utf8').toString();
+  var assetName = Buffer.from(astName, 'utf8').toString();
+  var _amount = Buffer.from(amo, 'utf8').toString();
+  var distributor = Buffer.from(dis, 'utf8').toString();
+  var recevier = Buffer.from(rec, 'utf8').toString();
   
   console.log("Minting...");
   console.log(`ASSET NAME: ${assetName}`);
@@ -120,7 +120,7 @@ async function assetMinter(res, astName, amo, rec, dis) {
 
       const account = await server.loadAccount(distributor); //distributor); //"GA3SXDTF26ERV3ZVPH3NG7AGWX772JZCNEOFFZR2EFEH57LI3XZO7OUF");
       const _asset = new Asset(
-          "GMM",
+          assetName,
           distributor //distributor //"GA3SXDTF26ERV3ZVPH3NG7AGWX772JZCNEOFFZR2EFEH57LI3XZO7OUF"//CHILD ACCOUNT
       );
 
@@ -132,7 +132,7 @@ async function assetMinter(res, astName, amo, rec, dis) {
               Operation.payment({
                   destination: recevier,//recevier, //"GCNLWIT4BKHN4Y4KSNLEOCTRC7YKWSHULAYGQN3FN4GCZSYSKE4G7FTC", //parent account
                   asset: _asset,
-                  amount: "10",
+                  amount: _amount,
               })
           )
             .setTimeout(100)
@@ -140,28 +140,12 @@ async function assetMinter(res, astName, amo, rec, dis) {
           console.log(`TRANS ID: ${transaction.toEnvelope().toXDR('base64')}`);
           return res.json({'text' : transaction.toEnvelope().toXDR('base64')});
 
-          // console.log(`TRANSSSS: ${transaction}`);
-      // transaction.sign(Keypair.fromSecret("SDCKVXEVLCBPNO3SXR6PWLIFKFHFTSYIR2PZ4PW2JDE53VDYEVU2ZRJR"));
-      // const result = await server.submitTransaction(transaction);
-
-      // if (result.successful === true) {
-      //     console.log("###################################")
-
-      //     console.log()
-      //     console.log("Asset ", asset.code, " distributed  to ", "GDPAAM26D55ORFAZQPZBCQF3KHE25K5AU6CUMAADI4CXSC2PJXU2AUEI")
-      //     console.log("Transaction hash: ", result.hash)
-
-      //     console.log()
-
-      //     console.log("###################################")
-
-
-      // }
+        
   } catch (e) {
+
       console.log(e);
 
   }
-
 
 }
 
