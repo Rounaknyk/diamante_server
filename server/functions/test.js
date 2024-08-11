@@ -2,7 +2,7 @@ const express = require('express');
 const testRouter = express.Router();
 
 
-testRouter.post('/test', (req, res) => {
+testRouter.get('/test', (req, res) => {
     console.log("Hello Lode Nishchal!");
 });
 
