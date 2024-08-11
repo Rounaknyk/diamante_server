@@ -18,6 +18,7 @@ app.use(cors({
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
     allowedHeaders: ['Content-Type', 'Authorization']
   }));
+app.use(cors);
 app.use(express.json());
 app.use(accRouter);
 app.use(paymentRouter);
@@ -49,7 +50,7 @@ app.use(testRouter);
 // console.log(secret);
 
 const port = 3000;
-//const serverIp = '192.0.0.2';
+const serverIp = '192.0.0.2';
 // const serverIp = '192.168.102.75';
 // const serverIp = '64.71.146.212';
 
