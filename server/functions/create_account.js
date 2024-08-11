@@ -277,20 +277,9 @@ async function getTrx(res, key){
     .setTimeout(180)
     .build();
 
-    // createAccountTx = await createAccountTx
-    //     .addOperation(
-    //       DiamSdk.Operation.createAccount({
-    //         destination: childAccount.publicKey(),
-    //         asset: _asset,
-    //         startingBalance: "7",
-    //       })
-    //     )
-    //     .setTimeout(180)
-    //     .build();
-
     console.log("reace2");
 
-    var text = createAccountTx.toEnvelope().toXDR('base64');
+    var text = await createAccountTx.toEnvelope().toXDR('base64');
     console.log(text);
 
     // await createAccountTx.sign(Keypair.fromSecret("SCEPPY2DZNZZEM6UTMPBH3FJO5UQ6TELPPLTSOC3STY4VRH7ID3YJDYY"));
