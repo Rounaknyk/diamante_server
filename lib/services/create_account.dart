@@ -14,7 +14,7 @@ class CreateAccount{
   Future<AccountModel?> create() async {
     try{
       http.Response res = await http.post(
-          Uri.parse('http://$kUrl/create-account'), body: jsonEncode({
+          Uri.parse('$kUrl/create-account'), body: jsonEncode({
       },), headers: {"Content-Type": "application/json"});
 
       print(jsonDecode(res.body));
@@ -29,7 +29,7 @@ class CreateAccount{
   Future createTrust(assetName, parentPublicKey, childPublicKey) async {
     try{
       http.Response res = await http.post(
-          Uri.parse('http://$kUrl/create-trust'), body: jsonEncode({
+          Uri.parse('$kUrl/create-trust'), body: jsonEncode({
         'parentPublicKey': parentPublicKey,
         'childPublicKey' : childPublicKey,
         'assetName' : assetName
@@ -46,7 +46,7 @@ class CreateAccount{
   Future mint(assetName, amount, parentPublicKey, childPublicKey) async {
     try{
       http.Response res = await http.post(
-          Uri.parse('http://$kUrl/mint'), body: jsonEncode({
+          Uri.parse('$kUrl/mint'), body: jsonEncode({
         'assetName' : assetName,
         'amount' : amount,
         'parentPublicKey' : parentPublicKey,
@@ -64,7 +64,7 @@ class CreateAccount{
   Future createParentAcc(pKey) async {
     try{
       http.Response res = await http.post(
-          Uri.parse('http://$kUrl/create-parent-account'), body: jsonEncode({
+          Uri.parse('$kUrl/create-parent-account'), body: jsonEncode({
         "key" : pKey
       },), headers: {"Content-Type": "application/json"});
 
@@ -84,7 +84,7 @@ class CreateAccount{
     try{
       print("reached");
       http.Response res = await http.post(
-          Uri.parse('http://$kUrl/trx'), body: jsonEncode({
+          Uri.parse('$kUrl/trx'), body: jsonEncode({
         "key" : key
       },), headers: {"Content-Type": "application/json"});
 

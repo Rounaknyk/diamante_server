@@ -14,7 +14,7 @@ class PaymentServices{
   Future sendAssets(userPublicKey, amount, childPublicKey, assetName, userSecretKey) async {
     try{
       http.Response res = await http.post(
-          Uri.parse('http://$kUrl/send-payment'), body: jsonEncode({
+          Uri.parse('$kUrl/send-payment'), body: jsonEncode({
         "userPublicKey" : userPublicKey,
         "userSecretKey" : userSecretKey,
         "amount" : amount,
@@ -34,7 +34,7 @@ class PaymentServices{
   Future sendPaymentToWorker(parentPublicKey, amount, workerPublicKey, assetName) async {
     try{
       http.Response res = await http.post(
-          Uri.parse('http://$kUrl/send-payment-to-worker'), body: jsonEncode({
+          Uri.parse('$kUrl/send-payment-to-worker'), body: jsonEncode({
         "parentPublicKey" : parentPublicKey,
         "amount" : amount,
         "workerPublicKey" : workerPublicKey,
@@ -52,7 +52,7 @@ class PaymentServices{
   Future sendPaymentToContractor(parentPublicKey, amount, contractorPublicKey, assetName) async {
     try{
       http.Response res = await http.post(
-          Uri.parse('http://$kUrl/send-payment-to-contractor'), body: jsonEncode({
+          Uri.parse('$kUrl/send-payment-to-contractor'), body: jsonEncode({
         "parentPublicKey" : parentPublicKey,
         "amount" : amount,
         "contractorPublicKey" : contractorPublicKey,
