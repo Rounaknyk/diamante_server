@@ -31,13 +31,14 @@ class PaymentServices{
     }
   }
 
-  Future sendPaymentToWorker(parentPublicKey, amount, workerPublicKey) async {
+  Future sendPaymentToWorker(parentPublicKey, amount, workerPublicKey, assetName) async {
     try{
       http.Response res = await http.post(
           Uri.parse('http://$kUrl/send-payment-to-worker'), body: jsonEncode({
         "parentPublicKey" : parentPublicKey,
         "amount" : amount,
         "workerPublicKey" : workerPublicKey,
+        "assetName" : assetName
       },), headers: {"Content-Type": "application/json"});
 
       print("PAYMENT RESPONSE : ${jsonDecode(res.body)['text']}");

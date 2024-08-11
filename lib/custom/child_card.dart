@@ -112,6 +112,10 @@ class _ChildCardState extends State<ChildCard> {
     print("CONT: ${contractorPublicKey}");
     var xdr = await PaymentServices(context).sendPaymentToContractor(widget.parentPublicKey, amount, contractorPublicKey, assetName);
     print("NSS ${xdr}");
+    setState(() {
+      amount1 = (int.parse(amount1) - int.parse(amount)).toString();
+      print(amount1);
+    });
     final shouldSubmit = true;
     final network = "Diamante Testnet";
 try{
@@ -342,7 +346,6 @@ try{
                             icon: Icons.money,
                             onChanged: (value) {
                               amount = value;
-                              amount1 = amount;
                             }),
                         SizedBox(
                           height: 12.0,

@@ -390,6 +390,7 @@ class _HomeTabState extends State<HomeTab> {
   showSendAssetsToWorkers(Size size) async {
     TextEditingController _eachWorkerController = TextEditingController();
     double amount = 0.0, eachWorkerAmount = 0.0;
+    String assetName = 'bridgeGoa';
 
     showDialog(
         context: context,
@@ -419,6 +420,19 @@ class _HomeTabState extends State<HomeTab> {
                         SizedBox(
                           height: 12.0,
                         ),
+                        Text('Asset name: ', style: TextStyle(fontWeight: FontWeight.bold),),
+                        SizedBox(height: 4.0),
+                        IconTextField(
+                            hintText: 'Asset name',
+                            icon: Icons.abc,
+                            onChanged: (value) {
+                              setState(() {
+                                assetName = value;
+                              });
+                            }),
+                        SizedBox(
+                          height: 12.0,
+                        ),
                         Text('Total amount: ', style: TextStyle(fontWeight: FontWeight.bold),),
                         SizedBox(height: 4.0),
                         IconTextField(
@@ -431,10 +445,6 @@ class _HomeTabState extends State<HomeTab> {
                                 print(_eachWorkerController.text);
                               });
                             }),
-                        // IconTextField(
-                        //     hintText: 'Enter user name',
-                        //     icon: Icons.abc,
-                        //     onChanged: (value) {}),
                         SizedBox(
                           height: 12.0,
                         ),
@@ -475,7 +485,7 @@ class _HomeTabState extends State<HomeTab> {
                               Navigator.pop(context);
                               for(var worker in wmList){
                                 print('sending payment to worker');
-                                await sendAssetsToAll(_eachWorkerController.text, worker.publicKey);
+                                await sendAssetsToAll(_eachWorkerController.text, worker.publicKey, assetName);
                                 print('Done');
                               }
                               // sendAssets(um!.publicKey, amount, childPublicKey, 'assetName');
@@ -703,7 +713,7 @@ class _HomeTabState extends State<HomeTab> {
 
   bool dotLoading = false;
 
-  sendAssetsToAll(amount, workerPublicKey) async {
+  sendAssetsToAll(amount, workerPublicKey, assetName) async {
     setState(() {
       dotLoading = true;
     });
@@ -711,8 +721,9 @@ class _HomeTabState extends State<HomeTab> {
       print("Worker: $workerPublicKey");
       print("Amount: $amount");
       print('KEY: ${widget.pKey}');
+      print('ASSET: $assetName');
       var transactionXdr = await PaymentServices(context).sendPaymentToWorker(
-          widget.pKey, amount, workerPublicKey);
+          widget.pKey, amount, workerPublicKey, assetName);
       final shouldSubmit = true;
       final network = "Diamante Testnet";
 

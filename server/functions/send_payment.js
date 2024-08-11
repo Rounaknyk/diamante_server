@@ -93,16 +93,21 @@ server
   });
 }
 
-async function sendPaymentToWorker(res, parentPublicKey, amount, workerPublicKey){
+async function sendPaymentToWorker(res, parentPublicKey, amount, workerPublicKey, assetName){
 
         var amount = Buffer.from(amount, 'utf8').toString();;
         var destinationId = Buffer.from(workerPublicKey, 'utf8').toString();
         var sourceSecretKey = Buffer.from(parentPublicKey, 'utf8').toString();
+        assetName = Buffer.from(assetName, 'utf8').toString();
         console.log("source: "+sourceSecretKey);
         console.log("Reached");
         var server = new DiamSdk.Horizon.Server("https://diamtestnet.diamcircle.io");
         const sourceAccount = await server.loadAccount(sourceSecretKey)
         //constructing the transaction
+        const _asset = new Asset(
+          assetName,
+          sourceSecretKey //distributor //"GA3SXDTF26ERV3ZVPH3NG7AGWX772JZCNEOFFZR2EFEH57LI3XZO7OUF"//CHILD ACCOUNT
+      );
         var transaction = new DiamSdk.TransactionBuilder(sourceAccount, {
           fee: DiamSdk.BASE_FEE,
           networkPassphrase: DiamSdk.Networks.TESTNET,
@@ -111,7 +116,7 @@ async function sendPaymentToWorker(res, parentPublicKey, amount, workerPublicKey
           .addOperation(
             DiamSdk.Operation.payment({
               destination: destinationId, //
-              asset: DiamSdk.Asset.native(),
+              asset: _asset,
               amount: amount.toString(),
             })
           )
@@ -284,8 +289,8 @@ async function sendPaymentToContractor(res, parentPublicKey, amount, contractorP
 
 paymentRouter.post('/send-payment-to-worker', async (req, res) => {
   try{
-    const {parentPublicKey, amount, workerPublicKey} = req.body;
-    await sendPaymentToWorker(res, parentPublicKey, amount, workerPublicKey);
+    const {parentPublicKey, amount, workerPublicKey, assetName} = req.body;
+    await sendPaymentToWorker(res, parentPublicKey, amount, workerPublicKey, assetName);
   }catch(e){
     console.log(e);
   }
