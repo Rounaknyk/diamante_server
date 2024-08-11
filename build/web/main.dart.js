@@ -49535,13 +49535,14 @@ return A.G($async$Bl,r)},
 zZ(a){return this.alR(a)},
 alR(a){var s=0,r=A.H(t.z),q,p=2,o,n,m,l,k,j
 var $async$zZ=A.I(function(b,c){if(b===1){o=c
-s=p}while(true)switch(s){case 0:p=4
+s=p}while(true)switch(s){case 0:A.az("CREATE PARENT WITH THIS KEY: "+a)
+p=4
 l=t.N
 s=7
 return A.O(A.Kn(A.eo("https://diamante-server.onrender.com/create-parent-account"),B.a0.oE(A.aD(["key",a],l,t.z),null),A.aD(["Content-Type","application/json"],l,l)),$async$zZ)
 case 7:n=c
 l=n
-A.az(B.a0.hv(0,A.hb(A.ha(l.e).c.a.h(0,"charset")).cj(0,l.w),null))
+A.az("CREATE PARENT RES: "+A.f(B.a0.hv(0,A.hb(A.ha(l.e).c.a.h(0,"charset")).cj(0,l.w),null)))
 l=n
 if(B.c.v(J.ed(J.am(B.a0.hv(0,A.hb(A.ha(l.e).c.a.h(0,"charset")).cj(0,l.w),null),"details")),"createAccountAlreadyExist")){l=A.b4T(J.aSM(n))
 throw A.c(l)}l=n

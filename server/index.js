@@ -45,24 +45,8 @@ app.use(testRouter);
 // console.log(secret);
 
 const port = 3000;
-// const serverIp = '192.0.0.2';
-// const serverIp = '192.168.102.75';
-// const serverIp = '64.71.146.212';
+const serverIp = '0.0.0.0';
 
-
-//const dbUrl = process.env.dbUrl;
-
-// const server = new DiamSdk.Horizon.Server("https://diamtestnet.diamcircle.io/");
-
-// the JS SDK uses promises for most actions, such as retrieving an account
-// dunc();
-// async function dunc(){
-//     const account = await server.loadAccount("GD3WMY7HHRC7SFXEZB3UBBHNAGSC5WRKAAJKWLJIAA6YM3URCSQS64XE");
-// console.log("Balances for account: " + "GD3WMY7HHRC7SFXEZB3UBBHNAGSC5WRKAAJKWLJIAA6YM3URCSQS64XE");
-// account.balances.forEach(function (balance) {
-//   console.log("Type:", balance.asset_type, ", Balance:", balance.balance);
-// });
-// }
 app.listen(port, () =>{
     console.log("listening");
 });

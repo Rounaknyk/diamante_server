@@ -62,13 +62,14 @@ class CreateAccount{
   }
 
   Future createParentAcc(pKey) async {
+    print("CREATE PARENT WITH THIS KEY: ${pKey}");
     try{
       http.Response res = await http.post(
           Uri.parse('$kUrl/create-parent-account'), body: jsonEncode({
         "key" : pKey
       },), headers: {"Content-Type": "application/json"});
 
-      print(jsonDecode(res.body));
+      print("CREATE PARENT RES: ${jsonDecode(res.body)}");
       if(jsonDecode(res.body)['details'].toString().contains("createAccountAlreadyExist"))
         throw jsonDecode(res.body);
       return (jsonDecode(res.body));
