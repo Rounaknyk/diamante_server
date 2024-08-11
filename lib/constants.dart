@@ -27,5 +27,3 @@ final kUrl = "https://diamante-server.onrender.com";
 final perKm = 20;
 final kNearDistance = 10000000.0;
 final kTimer = 5;
-final stripePublishKey = 'pk_test_51NblgvSCDHv1iCLThaKbaZuR39B0I7kP0vhUM8nolQg8zbClDg2kv97q0CSfYTTbDmY0BanF6tpAR4nRo8hmS5MU00vjhnhVGc';
-final stripeSecretKey = 'sk_test_51NblgvSCDHv1iCLTnNvMjVRBw5tPAiTJxTNENMcRcZBQqGtljwxoliCsS3KsrPssZgJ0fitRpx1QFmAwt6yvsi6c009zh4tO53';
