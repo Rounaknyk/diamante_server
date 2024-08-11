@@ -126,8 +126,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
                             decoration: BoxDecoration(color: Colors.white, border: Border.all(color: kGrey,), borderRadius: BorderRadius.circular(12)),
                             child: DropdownButton(items: [
                               DropdownMenuItem(child: Text('Select a role'), value: 'select a role',),
-                              DropdownMenuItem(child: Text('Government'), value: 'government',),
-                              DropdownMenuItem(child: Text('Contractor'), value: 'contractor',),
+                              DropdownMenuItem(child: Text('Organisation/Government'), value: 'government',),
+                              DropdownMenuItem(child: Text('Middle man'), value: 'contractor',),
                             ], onChanged: (value){
                               setState(() {
                                 role = value!;
