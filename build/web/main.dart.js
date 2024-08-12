@@ -49458,7 +49458,7 @@ ah(){return new A.a1p(B.j)}}
 A.a1p.prototype={
 au(){this.aR()
 this.a_Q()},
-a_Q(){A.ck(A.cV(0,0,2),new A.az7(this))},
+a_Q(){A.ck(A.cV(0,0,4),new A.az7(this))},
 O(a){var s=null,r=A.bU(a,s,t.w).w.a
 return A.RO(B.k,A.dm(A.dE(A.a([A.vM("animations/logo.json",r.b*0.3,s,r.a*0.3),A.ay(s,32,s),A.bd("DIAM FLOW",s,s,s,A.b1(s,s,B.m,s,s,s,s,s,s,s,s,32,s,s,B.z,s,s,!0,s,s,s,s,s,s,s,s),s,s),A.ay(s,16,s),A.bd("Streamlining financial transactions on the Diamante Blockchain!",s,s,s,A.b1(s,s,s,s,s,s,s,s,s,s,s,24,s,s,s,s,s,!0,s,s,s,s,s,s,s,s),s,s)],t.p),B.H,B.ci,B.a8),s,s))}}
 A.az7.prototype={

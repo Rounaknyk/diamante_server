@@ -21,7 +21,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
   }
 
   setTimer()  {
-    Timer(Duration(seconds: 2), (){
+    Timer(Duration(seconds: 4), (){
       Navigator.pushNamed(context, '/login');
     });
   }
