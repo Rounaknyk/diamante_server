@@ -39,7 +39,8 @@ class _LoginScreenState extends State<LoginScreen> {
       UserModel? um = await FirebaseService().getData(auth.currentUser!.uid);
       Navigator.push(context, MaterialPageRoute(builder: (context) => HomeScreen(pKey: LocalData().loadStoredValue('parentPublicKey'), um: um)));
     }catch(e){
-      Alert(context: context).alert(e);
+      Navigator.pushNamed(context, '/connect');
+      // Alert(context: context).alert(e);
       print(e);
     }
     setState(() {
