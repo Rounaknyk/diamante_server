@@ -48583,7 +48583,7 @@ ah(){return new A.Y6(B.j)}}
 A.Y6.prototype={
 au(){this.aR()},
 O(a){var s=null,r=A.xo(s,s,A.aHV($.ec(),s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s),"Baloo",s)
-return new A.Cf(A.aD(["/",new A.avy(),"/login",new A.avz(),"/register",new A.avA(),"/home",new A.avB(),"/connect",new A.avC()],t.N,t.Ab),"/connect","Diam Flow",r,!1,s)}}
+return new A.Cf(A.aD(["/",new A.avy(),"/login",new A.avz(),"/register",new A.avA(),"/home",new A.avB(),"/connect",new A.avC()],t.N,t.Ab),"/","Diam Flow",r,!1,s)}}
 A.avy.prototype={
 $1(a){return new A.tA(null)},
 $S:305}
