@@ -49473,7 +49473,7 @@ var $async$A1=A.I(function(d,e){if(d===1){o=e
 s=p}while(true)switch(s){case 0:p=4
 l=t.N
 s=7
-return A.O(A.Kn(A.eo("https://diamante-server.onrender.com/create-trust"),B.a0.oE(A.aD(["parentPublicKey",b,"childPublicKey",c,"assetName",a],l,t.z),null),A.aD(["Content-Type","application/json"],l,l)),$async$A1)
+return A.O(A.Kn(A.eo("https://diamflowass.discloud.app//create-trust"),B.a0.oE(A.aD(["parentPublicKey",b,"childPublicKey",c,"assetName",a],l,t.z),null),A.aD(["Content-Type","application/json"],l,l)),$async$A1)
 case 7:n=e
 l=n
 A.az("TRUST "+A.f(J.am(B.a0.hv(0,A.hb(A.ha(l.e).c.a.h(0,"charset")).cj(0,l.w),null),"text")))
@@ -49506,7 +49506,7 @@ var $async$Bl=A.I(function(e,f){if(e===1){o=f
 s=p}while(true)switch(s){case 0:p=4
 l=t.N
 s=7
-return A.O(A.Kn(A.eo("https://diamante-server.onrender.com/mint"),B.a0.oE(A.aD(["assetName",a,"amount",b,"parentPublicKey",c,"childPublicKey",d],l,t.z),null),A.aD(["Content-Type","application/json"],l,l)),$async$Bl)
+return A.O(A.Kn(A.eo("https://diamflowass.discloud.app//mint"),B.a0.oE(A.aD(["assetName",a,"amount",b,"parentPublicKey",c,"childPublicKey",d],l,t.z),null),A.aD(["Content-Type","application/json"],l,l)),$async$Bl)
 case 7:n=f
 l=n
 A.az("BHAI "+A.f(J.am(B.a0.hv(0,A.hb(A.ha(l.e).c.a.h(0,"charset")).cj(0,l.w),null),"text")))
@@ -49539,7 +49539,7 @@ s=p}while(true)switch(s){case 0:A.az("CREATE PARENT WITH THIS KEY: "+a)
 p=4
 l=t.N
 s=7
-return A.O(A.Kn(A.eo("https://diamante-server.onrender.com/create-parent-account"),B.a0.oE(A.aD(["key",a],l,t.z),null),A.aD(["Content-Type","application/json"],l,l)),$async$zZ)
+return A.O(A.Kn(A.eo("https://diamflowass.discloud.app//create-parent-account"),B.a0.oE(A.aD(["key",a],l,t.z),null),A.aD(["Content-Type","application/json"],l,l)),$async$zZ)
 case 7:n=c
 l=n
 A.az("CREATE PARENT RES: "+A.f(B.a0.hv(0,A.hb(A.ha(l.e).c.a.h(0,"charset")).cj(0,l.w),null)))
@@ -49576,7 +49576,7 @@ s=p}while(true)switch(s){case 0:p=4
 A.az("reached")
 l=t.N
 s=7
-return A.O(A.Kn(A.eo("https://diamante-server.onrender.com/trx"),B.a0.oE(A.aD(["key",a],l,l),null),A.aD(["Content-Type","application/json"],l,l)),$async$wO)
+return A.O(A.Kn(A.eo("https://diamflowass.discloud.app//trx"),B.a0.oE(A.aD(["key",a],l,l),null),A.aD(["Content-Type","application/json"],l,l)),$async$wO)
 case 7:n=c
 l=n
 A.az(B.a0.hv(0,A.hb(A.ha(l.e).c.a.h(0,"charset")).cj(0,l.w),null))
@@ -49609,7 +49609,7 @@ var $async$x0=A.I(function(e,f){if(e===1){o=f
 s=p}while(true)switch(s){case 0:p=4
 l=t.N
 s=7
-return A.O(A.Kn(A.eo("https://diamante-server.onrender.com/send-payment-to-worker"),B.a0.oE(A.aD(["parentPublicKey",a,"amount",b,"workerPublicKey",c,"assetName",d],l,t.z),null),A.aD(["Content-Type","application/json"],l,l)),$async$x0)
+return A.O(A.Kn(A.eo("https://diamflowass.discloud.app//send-payment-to-worker"),B.a0.oE(A.aD(["parentPublicKey",a,"amount",b,"workerPublicKey",c,"assetName",d],l,t.z),null),A.aD(["Content-Type","application/json"],l,l)),$async$x0)
 case 7:n=f
 l=n
 A.az("PAYMENT RESPONSE : "+A.f(J.am(B.a0.hv(0,A.hb(A.ha(l.e).c.a.h(0,"charset")).cj(0,l.w),null),"text")))
@@ -49642,7 +49642,7 @@ var $async$x_=A.I(function(e,f){if(e===1){o=f
 s=p}while(true)switch(s){case 0:p=4
 l=t.N
 s=7
-return A.O(A.Kn(A.eo("https://diamante-server.onrender.com/send-payment-to-contractor"),B.a0.oE(A.aD(["parentPublicKey",a,"amount",b,"contractorPublicKey",c,"assetName",d],l,t.z),null),A.aD(["Content-Type","application/json"],l,l)),$async$x_)
+return A.O(A.Kn(A.eo("https://diamflowass.discloud.app//send-payment-to-contractor"),B.a0.oE(A.aD(["parentPublicKey",a,"amount",b,"contractorPublicKey",c,"assetName",d],l,t.z),null),A.aD(["Content-Type","application/json"],l,l)),$async$x_)
 case 7:n=f
 l=n
 A.az("PAYMENT RESPONSE : "+A.f(J.am(B.a0.hv(0,A.hb(A.ha(l.e).c.a.h(0,"charset")).cj(0,l.w),null),"text")))
