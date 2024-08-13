@@ -184,7 +184,7 @@ class _HomeTabState extends State<HomeTab> {
                         SizedBox(
                           height: 12.0,
                         ),
-                        CustomButton(
+                        signLoading ? LottieBuilder.asset('animations/infinity.json', height: 30, width: 30,) : CustomButton(
                             text: signLoading ? 'LOADING' : 'SIGN',
                             backgroundColor: kPrimaryColor,
                             onPressed: () {
