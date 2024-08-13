@@ -656,6 +656,7 @@ class _HomeTabState extends State<HomeTab> {
   bool signLoading = false;
   Future signTransaction(assetName) async {
     Alert(context: context).msg('Please wait it might take some time...');
+    Alert(context: context).msg('Please wait it might take some time...');
     Toast.show("Please wait for some seconds...", duration: Toast.lengthLong, gravity:  Toast.bottom);
     assetName1 = assetName;
     try {
