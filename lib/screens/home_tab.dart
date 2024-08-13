@@ -187,8 +187,14 @@ class _HomeTabState extends State<HomeTab> {
                         signLoading ? LottieBuilder.asset('animations/infinity.json', height: 30, width: 30,) : CustomButton(
                             text: signLoading ? 'LOADING' : 'SIGN',
                             backgroundColor: kPrimaryColor,
-                            onPressed: () {
-                              signTransaction(assetName);
+                            onPressed: () async {
+                              setState(() {
+                                signLoading = true;
+                              });
+                              await signTransaction(assetName);
+                              setState(() {
+                                signLoading = false;
+                              });
                             }),
                       ],
                     ),
@@ -648,12 +654,9 @@ class _HomeTabState extends State<HomeTab> {
 
   String assetName1 = '';
   bool signLoading = false;
-  void signTransaction(assetName) async {
+  Future signTransaction(assetName) async {
     Alert(context: context).msg('Please wait it might take some time...');
-    Toast.show("Please wait for some seconds...", duration: Toast.lengthLong, gravity:  Toast.center);
-    setState(() {
-      signLoading = true;
-    });
+    Toast.show("Please wait for some seconds...", duration: Toast.lengthLong, gravity:  Toast.bottom);
     assetName1 = assetName;
     try {
       print("THIS IS UR PKEY ${widget.pKey}");
@@ -699,9 +702,7 @@ class _HomeTabState extends State<HomeTab> {
     // } else {
     //   print("Diam extension is not installed.");
     // }
-    setState(() {
-      signLoading = false;
-    });
+
     childList.add(ChildModel(id: '1', childPublicKey: childPublicKey, assetName: assetName, childSecretKey: childSecretKey, balance: '$amount1', parentPubicKey: widget.pKey));
     Navigator.pop(context);
   }

@@ -9,7 +9,7 @@ class Alert{
   }
 
   msg(text){
-    ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('${text}'), backgroundColor: Colors.green,));
+    ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('${text}'), backgroundColor: Colors.green,),);
   }
 
 
