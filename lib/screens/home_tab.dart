@@ -158,6 +158,7 @@ class _HomeTabState extends State<HomeTab> {
                 child: Stack(
                   children: [
                     Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       mainAxisSize: MainAxisSize.min,
                       children: [
                         Text(
@@ -181,6 +182,10 @@ class _HomeTabState extends State<HomeTab> {
                                 assetName = value;
                               });
                             }),
+                        SizedBox(
+                          height: 12.0,
+                        ),
+                        Text('Please wait for atleast 60 seconds after clicking on SIGN.'),
                         SizedBox(
                           height: 12.0,
                         ),
@@ -657,7 +662,6 @@ class _HomeTabState extends State<HomeTab> {
   Future signTransaction(assetName) async {
     Alert(context: context).msg('Please wait it might take some time...');
     Alert(context: context).msg('Please wait it might take some time...');
-    Toast.show("Please wait for some seconds...", duration: Toast.lengthLong, gravity:  Toast.bottom);
     assetName1 = assetName;
     try {
       print("THIS IS UR PKEY ${widget.pKey}");
