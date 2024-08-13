@@ -44,6 +44,7 @@ dependencies:
   text_hover: ^1.0.0+1
   dropdown_textfield: ^1.2.0
   cloud_firestore: ^5.2.1
+  toast: ^0.3.0
 
 dev_dependencies:
   flutter_test:

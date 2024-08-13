@@ -17,6 +17,7 @@ import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'dart:js' as js;
 import 'package:http/http.dart' as http;
+import 'package:toast/toast.dart';
 
 import '../class/worker_model.dart';
 import '../constants.dart';
@@ -649,6 +650,7 @@ class _HomeTabState extends State<HomeTab> {
   bool signLoading = false;
   void signTransaction(assetName) async {
     Alert(context: context).msg('Please wait it might take some time...');
+    Toast.show("Please wait for some seconds...", duration: Toast.lengthLong, gravity:  Toast.center);
     setState(() {
       signLoading = true;
     });
