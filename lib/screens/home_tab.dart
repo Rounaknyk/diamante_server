@@ -184,7 +184,7 @@ class _HomeTabState extends State<HomeTab> {
                           height: 12.0,
                         ),
                         CustomButton(
-                            text: 'SIGN',
+                            text: signLoading ? 'LOADING' : 'SIGN',
                             backgroundColor: kPrimaryColor,
                             onPressed: () {
                               signTransaction(assetName);
@@ -646,8 +646,12 @@ class _HomeTabState extends State<HomeTab> {
   }
 
   String assetName1 = '';
-
+  bool signLoading = false;
   void signTransaction(assetName) async {
+    Alert(context: context).msg('Please wait it might take some time...');
+    setState(() {
+      signLoading = true;
+    });
     assetName1 = assetName;
     try {
       print("THIS IS UR PKEY ${widget.pKey}");
@@ -694,7 +698,7 @@ class _HomeTabState extends State<HomeTab> {
     //   print("Diam extension is not installed.");
     // }
     setState(() {
-
+      signLoading = false;
     });
     childList.add(ChildModel(id: '1', childPublicKey: childPublicKey, assetName: assetName, childSecretKey: childSecretKey, balance: '$amount1', parentPubicKey: widget.pKey));
     Navigator.pop(context);
